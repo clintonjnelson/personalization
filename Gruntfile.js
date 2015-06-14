@@ -20,7 +20,9 @@ module.exports = function(grunt) {
         cwd:     'app/',
         expand:  true,
         flatten: false,
-        src:     '**/*.html',
+        src:     ['**/*.html',
+                  '**/*.gif'
+                 ],
         dest:    'build/',
         filter:  'isFile'
       }
@@ -28,6 +30,7 @@ module.exports = function(grunt) {
     jshint: {
       dev: {
         src: ['Gruntfile.js',
+              'app/**/*.js',
               'models/**/*.js',
               'routes/**/*.js',
               'test/**/*.js',
@@ -37,7 +40,9 @@ module.exports = function(grunt) {
       options: {
         // Base Options
         eqeqeq:  true,
-        globals: {},
+        globals: {
+          angular: true
+        },
         maxerr:  20,
         // Environments
         node:    true,
