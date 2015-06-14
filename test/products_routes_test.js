@@ -2,7 +2,7 @@
 
 var chai     = require('chai'                 );
 var chaihttp = require('chai-http'            );
-var Product  = require('../models/Product.js');
+var Product  = require('../models/Product.js' );
 var expect   = chai.expect;
 chai.use(chaihttp);
 
