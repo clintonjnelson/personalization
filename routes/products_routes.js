@@ -9,10 +9,8 @@ module.exports = function(app) {
   // Index. Returns products array.
   app.get('/products', function(req, res) {
     Product.find({}, function(err, products) {
-      if (err) {
-        console.log('Error loading products. Error: ', err);
-        return res.status(500).json({error: true});
-      }
+      if (err) { return res.status(500).json({error: true}); }
+
       res.json({products: products});
     });
   });
@@ -22,10 +20,8 @@ module.exports = function(app) {
     var productId = req.params.id;
 
     Product.find(productId, function(err, product) {
-      if (err) {
-        console.log('Error finding product id: ', productId, ". Error: ", err);
-        return res.status(500).json({error: true});
-      }
+      if (err) { return res.status(500).json({error: true}); }
+
       res.json({product: product});
     });
   });

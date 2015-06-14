@@ -7,7 +7,7 @@ var app     = express();
 var productRouter  = express.Router();
 
 // Load Routers
-require('./routes/product_router.js')(app);
+require('./routes/products_routes.js')(app);
 
 // Use Routes
 app.use(productRouter);

@@ -2,8 +2,9 @@
 
 var chai     = require('chai'                 );
 var chaihttp = require('chai-http'            );
-var Product  = require('../models/Products.js');
+var Product  = require('../models/Product.js');
 var expect   = chai.expect;
+chai.use(chaihttp);
 
 // Start server for testing
 require('../server.js');
@@ -21,10 +22,10 @@ describe('Products_Routes', function() {
         });
     });
 
-    it('returns an array of products', function() {
+    it('returns an array', function() {
       expect(Array.isArray(testProducts)).to.eq(true);
     });
-    it('returns an array of multiple products', function() {
+    it('returns an array of more than one item', function() {
       expect(testProducts.length).to.be.at.least(1);
     });
   });

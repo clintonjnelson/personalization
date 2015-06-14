@@ -12,6 +12,7 @@ module.exports = function(grunt) {
     jshint: {
       dev: {
         src: ['Gruntfile.js',
+              'models/**/*.js',
               'routes/**/*.js',
               'test/**/*.js',
               '*.js'
