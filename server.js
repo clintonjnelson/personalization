@@ -10,7 +10,8 @@ var productRouter  = express.Router();
 require('./routes/products_routes.js')(app);
 
 // Use Routes
-app.use(productRouter);
+app.use(productRouter                       );
+app.use(express.static(__dirname + '/build'));  // serve files from build
 
 app.listen(process.env.PORT || 3000, function() {
   console.log('server running on port: ', process.env.PORT || 3000);
