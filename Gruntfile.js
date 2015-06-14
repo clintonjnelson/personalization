@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
   // Load Tasks
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-mocha-test'    );
 
   // Task Configuration
   grunt.initConfig({
@@ -11,6 +12,8 @@ module.exports = function(grunt) {
     jshint: {
       dev: {
         src: ['Gruntfile.js',
+              'routes/**/*.js',
+              'test/**/*.js',
               '*.js'
              ]
       },
@@ -20,12 +23,24 @@ module.exports = function(grunt) {
         globals: {},
         maxerr:  20,
         // Environments
-        node:    true
+        node:    true,
+        mocha:   true
+      }
+    },
+    mochaTest: {
+      test: {
+        options: {
+          reporter:         'spec',
+          captureFile:       false,
+          quiet:             false,
+          clearRequireCache: false
+        },
+        src: ['test/*_test.js']
       }
     }
   });
 
   // Registered Tasks
-  grunt.registerTask('test',    ['jshint:dev']);
-  grunt.registerTask('default', ['test'      ]);
+  grunt.registerTask('test',    ['jshint:dev', 'mochaTest']);
+  grunt.registerTask('default', ['test'                   ]);
 };
