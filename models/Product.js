@@ -9,9 +9,9 @@ function returnSingleProduct(searchParam, results, callback) {
     return productObj.style_id === searchParam;
   });
 
-  if (product.length !== 1) {  // error if product not found or multiple
+  if (product.length === 0) {  // error if product not found or multiple
     console.log('Error finding product. Single product search returned ', product.length, ' items.');
-    return callback("Did not return one product.", null);
+    return callback("Could not find product.", null);
   }
 
   callback(null, product[0]);  // return matching product
@@ -21,7 +21,7 @@ module.exports = {
   find: function find(searchParam, callback) {
 
     // Load Database
-    fs.readFile('./db/database.json', 'utf-8', function(err, data) {
+    fs.readFile('./db/Database.json', 'utf-8', function(err, data) {
       var results;
       if (err) {
         console.log('Error occurred reading file. Error: ', err);
