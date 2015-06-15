@@ -21,7 +21,8 @@ module.exports = function(grunt) {
         expand:  true,
         flatten: false,
         src:     ['**/*.html',
-                  '**/*.gif'
+                  '**/*.gif',
+                  '**/*.css'
                  ],
         dest:    'build/',
         filter:  'isFile'
@@ -67,6 +68,10 @@ module.exports = function(grunt) {
           path: 'build/',
           file: 'bundle.js'
         },
+        loaders: [
+          { test:   /\.css$/,
+            loader: "style-loader!css-loader" }
+        ],
         stats: {
           colors: true
         },

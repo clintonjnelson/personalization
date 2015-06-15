@@ -9,9 +9,9 @@ function returnSingleProduct(searchParam, results, callback) {
     return productObj.style_id === searchParam;
   });
 
-  if (product.length !== 1) {  // error if product not found or multiple
+  if (product.length === 0) {  // error if product not found or multiple
     console.log('Error finding product. Single product search returned ', product.length, ' items.');
-    return callback("Did not return one product.", null);
+    return callback("Could not find product.", null);
   }
 
   callback(null, product[0]);  // return matching product

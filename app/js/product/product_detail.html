@@ -1,0 +1,25 @@
+<main id="product-detail-content" ng-init="getProduct()">
+
+  <a href="#/search" class="back-to-search-link">Back To Search Results:</a>
+  <img src="http://g.nordstromimage.com/imagegallery/store/product/Large/13/_10421913.jpg" alt="{{product.name}}" class="product-detail-image"></img>
+
+  <table class="product-detail-table">
+    <tr>
+      <td>Brand:</td>
+      <td class="td-right">{{product.brand}}</td>
+    </tr>
+    <tr>
+      <td class='product-table-desc'>Description:</td>
+      <td class="td-right">{{product.name}}</td>
+    </tr>
+    <tr>
+      <td>Product ID:</td>
+      <td class="td-right">{{product.style_id}}</td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td class="td-right">{{product.formatted_regular_price}}</td>
+    </tr>
+  </table>
+  <button id="add-to-cart-btn">Add to cart</button>
+</main>

@@ -1,8 +1,9 @@
 'use strict';
 
 require('angular/angular');
+require('angular-route'  );
 
-var persApp = angular.module('persApp', []);
+var persApp = angular.module('persApp', ['ngRoute']);
 
 // Services
 
@@ -12,3 +13,20 @@ var persApp = angular.module('persApp', []);
 require('./shared/logo/top_logo_directive.js'                )(persApp);
 require('./shared/search/search_products_directive.js'       )(persApp);
 require('./shared/product/product_thumb_summary_directive.js')(persApp);
+require('./product/product_detail_directive.js'              )(persApp);
+
+
+// View Routes
+persApp.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+    .when('/search', {
+      templateUrl: 'templates/views/search_products.html'
+    })
+    .when('/products/:style_id', {
+      templateUrl: 'templates/views/product_detail.html'
+    })
+    .when('/', {
+      redirectTo: '/search'
+    })
+    .otherwise({ redirectTo: '/search' });
+}]);
