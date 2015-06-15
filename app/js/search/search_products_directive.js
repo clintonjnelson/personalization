@@ -21,7 +21,6 @@ module.exports = function(app) {
         };
 
         $scope.productDetails = function searchProducts(product) {
-          console.log("PRODUCT PASSED INTO DETAILS FUNCTION: ", product);
           $location.path('/products/' + product.style_id);
         };
       }]
