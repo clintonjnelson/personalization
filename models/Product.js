@@ -21,7 +21,7 @@ module.exports = {
   find: function find(searchParam, callback) {
 
     // Load Database
-    fs.readFile('./db/database.json', 'utf-8', function(err, data) {
+    fs.readFile('./db/Database.json', 'utf-8', function(err, data) {
       var results;
       if (err) {
         console.log('Error occurred reading file. Error: ', err);

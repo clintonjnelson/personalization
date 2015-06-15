@@ -13,8 +13,8 @@
   width:            320px;
 }
 #careers-link {
-  float:         right;
-  position:      relative;
+  float:    right;
+  position: relative;
 }
 #product-detail-content {
   margin-top: 30px;
@@ -69,14 +69,14 @@
   width:           30%;
 }
 .search-list-item-container {
-  display: inline-block;
-  float:   left;
-  height:  auto;
+  display:    inline-block;
+  float:      left;
+  height:     auto;
   min-height: 430px;
 }
 .search-product-image {
-  display: none;
-  margin: 20px 30px 5px 30px;
+  display:   none;
+  margin:    20px 30px 5px 30px;
   min-width: auto;
 }
 

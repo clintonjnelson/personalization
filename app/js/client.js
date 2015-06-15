@@ -11,8 +11,7 @@ var persApp = angular.module('persApp', ['ngRoute']);
 
 // Directives
 require('./shared/logo/top_logo_directive.js'                )(persApp);
-require('./shared/search/search_products_directive.js'       )(persApp);
-require('./shared/product/product_thumb_summary_directive.js')(persApp);
+require('./search/search_products_directive.js'       )(persApp);
 require('./product/product_detail_directive.js'              )(persApp);
 
 
